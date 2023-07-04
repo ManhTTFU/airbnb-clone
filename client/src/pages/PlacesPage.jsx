@@ -8,6 +8,7 @@ function PlacesPage() {
     const [title, setTitle] = useState('')
     const [address, setAddress] = useState('')
     const [addedPhotos, setAddedPhotos] = useState([])
+    const [photoLink, setPhotoLink] = useState([])
     const [description, setDescription] = useState('')
     const [perks, setPerks] = useState([])
     const [extraInfo, setExtraInfo] = useState('')
@@ -52,6 +53,10 @@ function PlacesPage() {
                                 <input
                                     type="text"
                                     placeholder="{'add using a link ...jpb'}"
+                                    value={photoLink}
+                                    onChange={(ev) =>
+                                        setPhotoLink(ev.target.photoLink)
+                                    }
                                 />
                                 <button className="bg-gray-200 px-4 rounded-2xl">
                                     Add&nbsbl;photo
@@ -71,7 +76,9 @@ function PlacesPage() {
                                     setDescription(ev.target.value)
                                 }
                             />
-                            <Perks selected={perks} onChange={setPerks} />
+                            <div className="grid mt-2 gap-2  grid-cols-2 md:grid-cols-3">
+                                <Perks selected={perks} onChange={setPerks} />
+                            </div>
                             <h2 className="text-xl mt-4">Extra info</h2>
                             <input
                                 type="text"
