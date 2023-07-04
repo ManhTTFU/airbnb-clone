@@ -3,7 +3,7 @@ import { UserContext } from '../UserContext'
 import { Navigate, useParams } from 'react-router-dom'
 import { Link, useLocation } from 'react-router-dom'
 import axios from 'axios'
-import PlacePage from './PlacePage'
+import PlacePages from './PlacesPage'
 function AccountPage() {
     const { pathname } = useLocation()
     const { user, ready, setUser } = useContext(UserContext)
@@ -124,7 +124,7 @@ function AccountPage() {
                 )}
                 {subpage === 'places' && (
                     <div>
-                        <PlacePage />
+                        <PlacePages />
                     </div>
                 )}
             </div>
